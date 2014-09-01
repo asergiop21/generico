@@ -1,0 +1,25 @@
+<%= simple_form_for @order do |f| %>
+  <%= f.error_notification %>
+
+  <div class="fields">
+    
+<fieldset>
+  <div>
+          <table>  
+          <tr>    
+                  <td><%= f.text_field :quantity %></td>
+                  <td><%= f.text_field :unit_price %></td>
+                  <td><%= f.text_field :price_total %></td>
+                  <td><%= f.text_field :invoice_id %></td>
+
+          </tr>
+  </table>
+  </div>
+</fieldset>
+  
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

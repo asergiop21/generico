@@ -1,0 +1,33 @@
+<div class="span12">
+<% if flash[:error] %>
+  <li class="alert alert-error"><%= flash[:error]  %></li>
+  <% end %>
+<% if notice %>
+  <li class="alert alert-success"><%= notice  %></li>
+  <% end %>
+<h1><%= t('models.listing.title') %></h1>
+
+<table class="table">
+  <tr>
+    <th><%= Model.human_attribute_name('name') %></th>
+    <th><%= Model.human_attribute_name('comment') %></th>
+    <th><%= Model.human_attribute_name('make') %></th>
+    <th><%= Model.human_attribute_name('category') %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @models.each do |model| %>
+  <tr>
+    <td><%= model.name %></td>
+    <td><%= model.comment %></td>
+    <td><%= model.make.name %></td>
+    <td><%= model.category.name %></td>
+    <td><%= link_to t('labels.edit'), edit_make_model_path(model.make.id, model) %></td>
+    <td><%= link_to t('labels.destroy'), make_model_path(model.make.id, model), method: :delete, data: {confirm: t('labels.are_you_sure')}%></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

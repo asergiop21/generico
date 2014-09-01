@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyString
+  amount: 
+  number_invoice: 
+  customer_id: 1
+  user_id: 1
+
+two:
+  description: MyString
+  amount: 
+  number_invoice: 
+  customer_id: 1
+  user_id: 1

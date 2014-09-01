@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  customer_id: 1
+  equipoment_id: 1
+  status_loan: MyString
+  confirmation_loan: false
+  comment: MyText
+  user_id: 1
+  technical_id: 1
+
+two:
+  customer_id: 1
+  equipoment_id: 1
+  status_loan: MyString
+  confirmation_loan: false
+  comment: MyText
+  user_id: 1
+  technical_id: 1

@@ -1,0 +1,31 @@
+<div class="section_complete"> 
+<h1><%= t"locations.listing.title"%></h1>
+<table class="table">
+  <tr>
+    <th><%= Location.human_attribute_name(:name) %></th>
+    <th><%= Location.human_attribute_name(:departament) %></th>
+    <th><%= Location.human_attribute_name(:zipcode)%></th>
+    <th><%= Location.human_attribute_name(:province)%></th>
+    <th><%= Location.human_attribute_name(:country)%></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @locations.each do |location| %>
+  <tr>
+    <td><%= location.name %></td>
+    <td><%= location.departament %></td>
+    <td><%= location.zipcode %></td>
+    <td><%= location.province %></td>
+    <td><%= location.country %></td>
+    <td><%= link_to t('labels.show'), location %></td>
+    <td><%= link_to t('labels.edit'), edit_location_path(location) %></td>
+    <td><%= link_to t('labels.destroy'), location, method: :delete, data: { confirm: t('labels.are_you_sure') } %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<%= link_to t('view.locations.new_location'), new_location_path %>
+
+</div>

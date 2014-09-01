@@ -1,0 +1,29 @@
+
+.section2
+{
+  height: 430px;
+  width: 22%;
+  float: left;
+  top: 27%;
+  position: absolute
+  // border: 1px solid #E1E1E1;
+ // padding: 3px;
+}
+
+.total_1{
+
+  float: right;
+  width: 15%; 
+}
+.total_1, input{
+
+  font-size: 50px;
+  position: static;
+}
+
+.pagos
+{
+  background: blue;
+  float: right;
+  width: 15%; 
+}

@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<b>Cliente:</b>
+<%= @invoice.customer_id %>
+<div>
+   <div class="row panel panel-default">
+      <div class=" col-xs-12 panel-heading small">
+         <div class="col-xs-1 col-md-1 text-center">Cantidad</div>
+         <div class="col-xs-5 col-md-3 text-center">Articles</div>
+         <div class="col-xs-2 col-md-1 text-center">Precio Unit</div>
+         <div class="col-xs-2 col-md-1 text-center">Descuento</div>
+         <div class="col-xs-2 col-md-2 text-center">Precio Total</div>
+      </div>
+      <div class="panel-body small col-md-8">
+         <%  @invoice.orders.each do |order|%>  
+            <div class="col-xs-1 col-md-1"><%= order.quantity%></div>
+         <div class="col-md-5 col-xs-5"><%= order.article.name %></div>
+         <div class="col-md-2 col-xs-2"><%= order.unit_price%></div>
+         <div class="col-md-2 col-xs-2"><%= order.discount%></div>
+         <div class="col-md-2 col-xs-2"><%= order.price_total%></div>
+      <%end %>
+      </div>
+   </div>
+   <div>
+      <h1> <a href="" id="printOut" class="btn btn-primary hidden-print">Imprimir</a></h1>
+   </div>
+</div>
+
+<p>
+<b>Precio total: $</b>
+<%= @invoice.price_total %>
+</p>
+
+
+
+
+

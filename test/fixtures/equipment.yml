@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  mac: MyString
+  state: 1
+  comment: MyString
+  category_id: 1
+  model_id: 1
+  supplier_id: 1
+
+two:
+  mac: MyString
+  state: 1
+  comment: MyString
+  category_id: 1
+  model_id: 1
+  supplier_id: 1

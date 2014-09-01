@@ -1,0 +1,39 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+<div class="span12">
+
+    <div class="span6">
+<%= f.input :email, :autofocus => true %>
+<%= f.input :username %>
+<%= f.input :lastname %>
+<%= f.input :name %>
+ <%= f.label :lenguaje %>
+        <ul>
+          <li><%= link_to_unless_current "English", locale: "en" %></li>
+          <li><%= link_to_unless_current "spanish", locale: "es" %></li>
+      </ul>
+    </div>
+    <div class="span4">  
+      
+      <%= f.label :current_password %> <b>(we need your current password to confirm your changes)</b><br />
+      <%= f.password_field :current_password %>
+      <%= f.label :password %> <b>(leave blank if you don't want to change it)</b><br/>
+      <%= f.password_field :password, :autocomplete => "off" %>
+      <%= f.label :confirmation_password %> <b></b><br />
+      <%= f.password_field :password_confirmation %>
+
+    </div>
+    </div>
+
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+</div>
+
+
+  <div><%= f.submit "Update" %></div>
+<% end %>
+

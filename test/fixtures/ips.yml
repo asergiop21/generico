@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ip_ap: MyString
+  ip_device: MyString
+  plan_id: 1
+
+two:
+  ip_ap: MyString
+  ip_device: MyString
+  plan_id: 1

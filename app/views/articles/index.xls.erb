@@ -1,0 +1,40 @@
+  <div class="span8 section">
+    <div class="title">
+        <h2>Listado de Articulos</h2>
+    </div>
+
+<% if @articles %>
+ 
+       <table class="table">
+  <tr>
+    <th class="center">Cod</th>
+    <th class="center">Nombre</th>
+    <th class="center">Proveedor</th>
+    <th class="label label-info span2i center">Precio Publico</th>
+    <th class="center">Stock</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @articles.each do |article| %>
+  <tr>
+    <td class="span4"><%= article.barcode %></td>
+    <td class="span4"><%= article.name %></td>
+    <td class="span4"><%= article.supplier.name %></td>
+    <td class="label label-info span2 center"><%= number_to_currency(article.price_total) %></td>
+    <td class="center span2"><%= article.quantity %></td>
+   <% end %>
+  </tr>
+</table>
+<% end %>
+
+</div>
+
+
+
+
+
+
+
+

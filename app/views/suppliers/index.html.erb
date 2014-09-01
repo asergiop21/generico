@@ -1,0 +1,27 @@
+<h1><%= t'suppliers.listing.title' %></h1>
+
+<table class="table">
+  <tr>
+    <th>ID</th>
+    <th><%= Supplier.human_attribute_name(:name)%></th>
+    <th><%= Supplier.human_attribute_name(:address)%></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @suppliers.each do |supplier| %>
+  <tr>
+   <td><%= supplier.id %></td>
+   <td><%= supplier.name %></td>
+    <td><%= supplier.address %></td>
+    <td><%= link_to t('labels.show'), supplier %></td>
+    <td><%= link_to t('labels.edit'), edit_supplier_path(supplier) %></td>
+    <td><%= link_to t('labels.destroy'), supplier, method: :delete, data: { confirm: t('labels.are_you_sure') } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to t('view.suppliers.new_supplier'), new_supplier_path %>

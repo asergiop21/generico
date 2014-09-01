@@ -1,0 +1,20 @@
+<fieldset>
+   <div class="form-group ">
+      <%= f.label :phone_number, t('view.customers.phone_number')%>
+      <div class="col-md-12">
+         <div class="col-md-4">
+            <%= f.select :phone, ["", "Casa", "Movil", "Trabajo"], {}, class: "select_i"%>
+         </div>
+         <div class="col-md-3">
+             <%= f.text_field :phone_prefix, class: "form-control"  %>  
+         </div>
+         <div class="col-md-4">
+            <%= f.text_field :phone_number, class: "form-control" %>
+            <%= f.hidden_field :_destroy %>
+         </div>
+         <div class="col-md-1">
+            <%= link_to  t('view.customers.remove_phone'), '#', class: "remove_fields" %>
+         </div>
+      </div>
+   </div>
+</fieldset>

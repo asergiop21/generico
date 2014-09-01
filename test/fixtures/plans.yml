@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  price: 1
+  upload_speed: MyString
+  download_speed: MyString
+  remove: false
+  price_surcharges1: MyString
+  integer: MyString
+  proce_sircharges2: 1
+
+two:
+  name: MyString
+  price: 1
+  upload_speed: MyString
+  download_speed: MyString
+  remove: false
+  price_surcharges1: MyString
+  integer: MyString
+  proce_sircharges2: 1

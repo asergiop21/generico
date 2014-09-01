@@ -1,0 +1,97 @@
+// Place all the styles related to the customers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+//  overflow-y: hidden;
+
+}
+.side{
+  float: left;
+  background:#FaFaFa ;
+  height: 520px;
+  width: 22%;
+  border: 1px solid #E1E1E1;
+  padding: 3px;
+}
+
+.search{
+  margin-left: 40px;
+}
+.search label {
+  font-family:  Sans-serif ; 
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.title{
+  background:#F0F0F0 ;
+  height: -10%
+}
+
+.section{
+  float: left;
+  background:#FaFaFa ;
+  height: 520px;
+  width: 76%;
+  border: 1px solid #E1E1E1;
+  padding: 3px;
+  overflow: auto;
+}
+
+.section_complete{
+  background:#FeFeFe ;
+  height: 550px;
+  overflow: auto;
+  border: 1px solid #E1E1E1;
+  padding: 6px;
+}
+.section_complete h1{
+
+  background:#F0F0F0 ;
+}
+.data{
+  font-family:  Sans-serif ; 
+  font-size: 10px;
+  background:#fcfcfc ;
+  min-height: 420px;
+}
+
+
+.select_i{
+  width: 110px;
+}
+
+
+/*
+.span* {
+
+ margin-left: 5px;
+}
+
+.span3{
+ border-style :solid; 
+ border-color: black;
+
+}
+
+.span4{
+ border-style :solid; 
+ border-color: red;
+
+}
+.span7
+{
+ border-style :solid; 
+ border-color: blue;
+}
+
+.span8
+{
+ border-style :solid; 
+}
+.span12
+{
+ border-style :solid; 
+ border-color: green;
+
+}*/

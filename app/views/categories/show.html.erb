@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= Category.human_attribute_name('name') %>:</b>
+  <%= @category.name %>
+</p>
+
+<p>
+  <b><%= Category.human_attribute_name('comment')%>:</b>
+  <%= @category.comment %>
+</p>
+
+
+<%= link_to t('labels.edit'), edit_category_path(@category) %> |
+<%= link_to t('labels.back'), categories_path %>

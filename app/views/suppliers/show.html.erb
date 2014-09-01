@@ -1,0 +1,24 @@
+
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= Supplier.human_attribute_name('name') %></b>
+  <%= @supplier.name %>
+</p>
+
+<p>
+  <b><%= Supplier.human_attribute_name('address') %></b>
+  <%= @supplier.address %>
+</p>
+
+
+<p>
+  <b><%= Supplier.human_attribute_name('user') %></b>
+  <%= @supplier.user.username %>
+</p>
+
+
+<%= link_to t('labels.edit'), edit_supplier_path(@supplier) %> |
+<%= link_to t('labels.back'), suppliers_path %>

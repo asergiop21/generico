@@ -1,0 +1,37 @@
+<div class="row">
+   <div class="col-md-2">
+      <%= f.input( :name, label: false,  input_html: {
+         class: 'form-control',
+         data: {'autocomplete-field' => true,
+                'autocomplete-for' => '#invoice_orders_#{id}_articles_id',
+                'autocomplete-url' => articles_path(format: :json)
+      } 
+      }) %>
+   <%= f.input :articles_id, as: :hidden, label: false%>
+   </div>
+   <div class="col-md-2 ">
+      <%= f.input :quantity_stock, as: :hidden , label: false, as: :string, :input_html=>{:class=>"form-control"}%>
+   </div>
+   <div class=" col-md-2">
+
+      <%= f.input :quantity, label: false, :input_html => {:class => "form-control quantity"}  %>
+   </div>
+   <div class="col-md-2">
+
+      <%= f.input :unit_price, label: false, :input_html => {:class => "form-control"}  %>
+   </div>
+   <div class=" col-md-2">
+
+      <%= f.input :discount, label: false, :input_html => {:class => "form-control discount "} %>
+   </div>
+   <div class=" col-md-2">
+      <%= f.input :price_total, label: false, :input_html => {:class => "form-control price_subtotal"} %>
+   </div>
+   <div class="col-md-2">
+      <%if current_user.role == 'Admin' %>
+         <%= f.hidden_field :_destroy %>
+      <%= button_to "Eliminar", '#', class: "remove_fields_orders btn btn-danger form-control" %>
+   <% end %>
+   </div>
+</div>
+

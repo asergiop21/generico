@@ -1,0 +1,45 @@
+<h3>Listado de Remitos</h3>
+
+<table class="table">
+  <tr>
+    <th>Remito</th>
+    <th>Fecha</th>
+    <th>Price total</th>
+    <th>Pagado</th>
+    <th>Total</th>
+    <th>Cuenta corriente</th>
+    <th>Estado Cta cte</th>
+    <th></th>
+  </tr>
+
+<% @invoices.each do |invoice| %>
+  <tr>
+    <td><%= invoice.id %></td>
+    <td><%= invoice.created_at.strftime("%d/%m/%Y") %></td>
+    <td><%= invoice.price_total %></td>
+    <td><%=  Invoice.sum_pay(invoice.id) %></td>
+    <td></td>
+    <td><%=  invoice.current_account ? 'Si' : 'No' %> </td>
+    <td> <%= invoice.cancelar_invoice ? "  <b> 'Cancelado' </b> ": 'No Cancelado' if invoice.current_account == true %></td>
+    <td><%= link_to "Editar", edit_invoice_path(invoice) %></td>
+    <td><%= link_to "Imprimir", invoice_path( invoice, format: "pdf") %></td>
+    <td><%= link_to "Cancelar", invoice_cancelar_path(invoice) %></td>
+    <td><%= link_to "Actualizar precio",invoice_update_invoice_path( invoice) %></td>
+    </tr>
+<% end %>
+
+        <tr>
+                  <td></td>
+                  <td></td>
+                  <td><b><%= number_to_currency(@amount) %></b></td>
+                  <td><b><%= number_to_currency(@payments) %></b></td>
+                  <% if @total < 0 %>
+                          <td class="alert alert-error"><b><%= number_to_currency(@total) %></b></td>
+                  <% else %>
+                  <td><b><%= number_to_currency(@total) %></b></td>
+                  <% end %>
+          </tr>
+  </table>
+
+<br />
+

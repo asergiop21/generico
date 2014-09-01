@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  comment: MyString
+  make_id: 1
+
+two:
+  name: MyString
+  comment: MyString
+  make_id: 1

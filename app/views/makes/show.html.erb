@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= Make.human_attribute_name('name') %>:</b>
+  <%= @make.name %>
+</p>
+
+<p>
+  <b><%= Make.human_attribute_name('comment') %>:</b>
+  <%= @make.comment %>
+</p>
+
+
+<%= link_to t('labels.edit'), edit_make_path(@make) %> |
+<%= link_to t('labels.back'), makes_path %>

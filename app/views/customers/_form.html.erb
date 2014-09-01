@@ -1,0 +1,36 @@
+<%= simple_form_for @customer do |f| %>
+  <div class="container"> 
+    <div class="form-inputs">
+      <div class="row-fluid">
+  <%= f.error_notification %>
+  <div class="span5">
+     <%= f.input :name, :required=> true, :autofocus=>true, :input_html=> {class: 'form-control'} %>
+    <%= f.input :lastname,   :required=> true, :hint => 'no special characteres' , :input_html=> {class: 'form-control'} %>
+    <%= f.input :address,  :required=> true , :input_html=> {class: 'form-control'} %>
+    <%= f.input :neighborhood , :input_html=> {class: 'form-control'} %>
+
+    <div class="fields">
+       <%= f.simple_fields_for :phones, :input_html=>{class: 'form-inline'} do |ph| %>
+       <%=render 'phones', f: ph  %>
+     <% end %>
+  <%= link_to_add_fields t('view.customers.add_phones'), f , :phones %>
+  </div>
+  </div>
+
+  <div class="span5">
+    <%= f.input :email,  placeholder: 'user@domain.com', :input_html=> {class: 'form-control'} %>
+    <%= f.input :dni, :input_html=> {class: 'form-control'} %>
+          <%= f.input :location_id do %>
+           <%= f.collection_select :location_id,  Location.order(:name), :id, :name, class: "span3" %>
+           o Crear una <%=f.input :new_location , label: false, :input_html=> {class: 'form-control'} %>
+   <% end  %>
+   <%= f.input :description, :input_html => {:rows => 3, :class=> 'form-control'}%>
+   <%= f.input :cuit, input_html: { class:'form-control'}  %>
+   </div>
+</div>
+</div>
+</div>
+<div class="form-actions">
+    <%= f.button  :submit, :class => 'btn btn-primary' %>
+  </div>
+<% end %>

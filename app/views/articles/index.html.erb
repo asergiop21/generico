@@ -1,0 +1,98 @@
+<div class="container-fluid">
+   <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+         <span class="sr-only">Menu de Navegacion</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+      </button>
+   </div>
+</div>
+<div>
+   <% if flash[:error] %>
+      <li class="alert alert-error"><%= flash[:error]  %></li>
+<% end %>
+   <% if notice %>
+      <li class="alert alert-success"><%= notice  %></li>
+<% end %>
+</div>
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+         <%= simple_form_for '', method: 'get' do |f| %>
+            <div class="articulox">
+            <%= f.input( :q, label: 'Articulos',  input_html: {
+               class: 'form-control',
+               data: {'autocomplete-field' => true,
+                      'autocomplete-for' => '#_article_id',
+                      'autocomplete-url' => articles_path(format: :json)
+            } 
+            }) %>
+         <%= f.input :article_id, as: :hidden%>
+
+         </div>
+      <% end %>
+
+            <%= form_tag import_articles_path, multipart: true do %>
+               <div>
+               <%= file_field_tag :file, class: "import" %>
+               <div>
+                  <%= submit_tag "Import Archivo", class: "btn btn-primary" %>
+               </div>
+            </div>
+         <% end %>
+            <div>
+               Descargar:
+               <%= link_to "CSV", articles_path(format: "csv")  %>|
+               <%= link_to "XLS", articles_path(format: "xls")  %>| 
+            </div>
+
+      </div>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+         <h1 class="page-header">Listado de Articulos</h1>
+
+         <div class="table-responsive">
+            <%= will_paginate @articles_1 %>
+            <% if @articles_1 %>
+               <table class="table table-striped">
+               <thead>
+                  <tr>
+                     <th class="center">Cod</th>
+                     <th class="center">Nombre</th>
+                     <th class="center">Proveedor</th>
+                     <th class="center">Precio Publico</th>
+                     <th class="center">Stock</th>
+                     <th></th>
+                     <th></th>
+                     <th></th>
+
+                  </tr>
+               </thead>
+               <tbody>
+               <tr>
+
+                  <% @articles_1.each do |article| %>
+                     <tr>
+                     <td><%= article.barcode %></td>
+                     <td><%= article.name %></td>
+                     <td><%= article.supplier_id.nil? ? "" : article.supplier.name %></td>
+                     <td class="label label-info center"><%= number_to_currency(article.price_total) %></td>
+                     <td><%= article.quantity %></td>
+                     <td><%= link_to 'Ver', article_path(article, format: 'pdf' ) %></td>
+                     <% if can? :show, @articles %>
+                        <td class="span1"><%= link_to 'Editar', edit_article_path(article) %></td>
+                     <td><%= link_to t('labels.destroy'), article, method: :delete, data: { confirm: t('labels.are_you_sure') } %></td>
+                  <% end %>
+                  <% end %>
+
+                  </tr>
+                  </tbody>
+               </table>
+            <% end %>
+            </div>
+      <%= link_to 'Nuevo Articulo', new_article_path %>
+         </div>
+
+      </div>
+   </div>
+</div>

@@ -1,0 +1,14 @@
+<% if flash[:error] %>
+  <li class="alert alert-error"><%= flash[:error]  %></li>
+  <% end %>
+<% if notice %>
+  <li class="alert alert-success"><%= notice  %></li>
+  <% end %>
+
+<div class="section_complete">
+  <h3><%= t ('customers.new.title') %></h3>
+    <div class="data">
+      <%= render 'form' %>
+    </div>
+</div>
+

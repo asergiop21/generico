@@ -1,0 +1,56 @@
+<% if flash[:error] %>
+  <li class="alert alert-error"><%= flash[:error] %></li>
+  <% end %>
+<% if notice %>
+  <li class="alert alert-success"><%= notice %></li>
+  <% end %>
+<div class="Container span12">
+<p>
+  <b>Nombre:</b>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <b>apellido:</b>
+  <%= @customer.try(:lastname) %>
+</p>
+
+<p>
+  <b>Direccion</b>
+  <%= @customer.address %>
+</p>
+
+<p>
+  <b>Localidad:</b>
+</p>
+<p>
+  <b>Email:</b>
+  <%= @customer.email %>
+</p>
+
+<p>
+  <b>Dni:</b>
+  <%= @customer.dni %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @customer.description %>
+</p>
+
+<p>
+  <b>Cuit:</b>
+  <%= @customer.cuit %>
+</p>
+
+<p>
+  <b>Telefono</b>
+  <% @customer.phones.each do |u| %>
+<%= u.phone_number %> -
+<% end %>
+</p>
+
+<%= link_to 'Editar', edit_customer_path(@customer) %> |
+<%= link_to 'Volver', customers_path %>
+
+</div>

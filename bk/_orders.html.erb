@@ -1,0 +1,23 @@
+<fieldset>
+<div class="span12">
+        <div class="search span3">
+                <%= f.input( :name, label: 'Articles', input_html: { 
+                        data: {'autocomplete-field' => true,
+                               'autocomplete-for' => '#_articles_id',
+                               'autocomplete-url' => articles_path(format: :json)
+                } 
+                }) %>
+        <%= f.input :articles_id %>
+</div>
+        <div class="span3 small">
+                <%= f.input :quantity, :input_html => {:class => "input-small"}  %>
+        </div>
+        <div class="span2">
+                <%= f.input :unit_price, :input_html => {:class => "input-small"}  %>
+        </div>
+        <div class="span2">
+                <%= f.input :price_total , :input_html => {:class => "input-small"} %>
+        </div>
+        <%= link_to "remove", '#', class:"remove_fields" %>
+</div>
+</fieldset>

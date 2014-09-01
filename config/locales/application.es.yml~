@@ -1,0 +1,40 @@
+'es:'
+  customers:
+    title: "Consulta de clientes"
+  devise:
+        sign_in: "Registrarse"
+  activerecord:
+    errors:
+      messages:
+        blank: "no puede quedar en blanco"
+    models:
+      customer: 'Clientes'
+    attributes:
+      customer:
+        name: 'Nombre'
+        lastname: 'Apellido'
+        address: 'Direccion'
+        neighborhood: 'Barrio'
+        reference_direction: 'Direccion de referencia'
+        email: 'email'
+        dni: 'dni'
+        location_id: 'Localidad'
+        plans_id: 'Planes'
+        description: 'Descripcion'
+        cuit: 'cuit '
+        date_of_birth: 'Fecha de nacimiento'
+        category: 'Categoria'
+
+      user:
+        username: "Nombre de usuario"
+        password: "Password"
+        remember_me: "Recuerdame" 
+        sign_in: "Registrarse" 
+        languaje: "Idioma"
+  view:
+    customers:
+      remove: "Eliminar"
+      add_phones: 'Agregar Telefonos'
+      phone_number: 'Telefonos'
+      prompt_location: 'Seleccione una localidad'
+      prompt_plans: 'Seleccione un plan'

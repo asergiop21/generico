@@ -1,0 +1,67 @@
+'en':
+  date:
+    format:
+      default: '%d/%m/%Y'
+      short: '%d de %Y'
+      long: '%d de %B de %Y'
+    order:
+      - :day
+      - :month
+      - :year
+    month_names:
+      - ~
+      - Ene
+      - Febrero
+      - Marzo
+      - Abril
+      - Mayo
+      - Junio
+      - Julio
+      - Agosto
+      - Septiembre
+      - Octubre
+      - Noviembre
+      - Diciembre
+    abbr_month_names:
+      - ~
+      - Ene
+      - Feb
+      - Mar
+      - Abr
+      - May
+      - Jun
+      - Jul
+      - Ago
+      - Sep
+      - Oct
+      - Nov
+      - Dic
+  time:
+    formats:
+      default: '%A'
+      short: '%d de %b %H:%M'
+      long: '%d de %B de %Y %H:%M'
+      minimal: '%d/%m/%Y %H:%M'
+    am: 'am'
+    pm: 'pm'
+
+
+  errors:
+    messages:
+      taken: 'Ya está en uso'
+      wrong_length: 'Cantidad de caracteres máximo %{count}'
+      not_a_number: 'No es un numero'
+      not_an_integer: 'Debe ser un entero'
+      too_long: 'Es demasiado largo (%{count} caracteres máximo)'
+      too_short: 'Es demasiado corto(%{count} caracteres mínimo)'
+        
+
+  helpers:
+    submit:
+      create: 'Crear %{model}'
+      update: 'Actualizar %{model}'
+      submit: 'Guardar %{model}'
+
+  will_paginate:
+     previous_label: 'Anterior'
+     next_label: 'Siguiente'

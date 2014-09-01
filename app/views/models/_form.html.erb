@@ -1,0 +1,16 @@
+<%= simple_form_for [@make, @model] do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+  </div>
+
+   <%= f.input :category do %>
+     <%= f.select :category_id,  Category.all.map {|c|[c.name, c.id]}, prompt: "Seleccione una Categoria" %>
+   <% end  %>
+
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

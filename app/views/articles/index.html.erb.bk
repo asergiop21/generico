@@ -1,0 +1,92 @@
+<div class="row" >
+     <div class="span12">
+         <% if flash[:error] %>
+             <li class="alert alert-error"><%= flash[:error]  %></li>
+         <% end %>
+         <% if notice %>
+             <li class="alert alert-success"><%= notice  %></li>
+         <% end %>
+      </div>
+    <div class="span3 side articulo">
+         <%= simple_form_for articles_path, method: 'get' do |f| %>
+            <div class="search">
+              <%= f.input( :q, label: 'Articulos', input_html: { 
+                          data: {'autocomplete-field' => true,
+                                  'autocomplete-for' => '#_article_id',
+                                  'autocomplete-url' => articles_path(format: :json)
+                                } 
+                              }) %>
+              <%= f.input :article_id, as: :hidden%>
+            </div>
+<div class="search">
+       <%= f.collection_select :supplier_id, Supplier.order(:name), :id, :name , include_blank: true%>
+</div>
+
+    <% end %> 
+
+<%= form_for import_articles_path, multipart: true do %>
+  <div class="search span4">
+          <%= file_field_tag :file, class: "import" %>
+          <div>
+              <%= submit_tag "Import Archivo", class: "btn btn-primary" %>
+          </div>
+
+</div>
+    <% end %>
+<div class="search">
+Descargar:
+  <%= link_to "CSV", articles_path(format: "csv")  %>|
+  <%= link_to "XLS", articles_path(format: "xls")  %>
+</div>
+
+  </div>
+
+    
+
+
+  <div class="span8 section">
+    <div class="title">
+        <h2>Listado de Articulos</h2>
+    </div>
+<%= will_paginate @articles %>
+<% if @articles %>
+ 
+       <table class="table">
+  <tr>
+    <th class="center">Cod</th>
+    <th class="center">Nombre</th>
+    <th class="center">Proveedor</th>
+    <th class="label label-info span2i center">Precio Publico</th>
+    <th class="center">Stock</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @articles.each do |article| %>
+  <tr>
+    <td class="span4"><%= article.barcode %></td>
+    <td class="span4"><%= article.name %></td>
+    <td class="span4"><%= article.supplier.name %></td>
+    <td class="label label-info span2 center"><%= number_to_currency(article.price_total) %></td>
+    <td class="center span2"><%= article.quantity %></td>
+   <% if can? :show, @articles %>
+           <td class="span1"><%= link_to 'Ver', article %></td>
+           <td class="span1"><%= link_to 'Editar', edit_article_path(article) %></td>
+   <% end %>
+   <% end %>
+  </tr>
+</table>
+<% end %>
+
+<br />
+<%= link_to 'Nuevo Articulo', new_article_path %>
+</div>
+
+
+
+
+
+
+
+

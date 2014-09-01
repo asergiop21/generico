@@ -1,0 +1,25 @@
+<div class="primero">
+        <div class="logo_1"> GESTION<span class="logo_2">Base - </span><span class="logo_3">1.0</span></div>    
+</div>
+
+
+<div class="segundo">
+
+        <% if flash[:alert] %>
+                <li class="alert alert-error"><%= flash[:alert] %></li>
+        <% end %>
+        <h3><%= t"devise.sign_in" %></h3>
+        <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+                <%= image_tag "user-icon.jpg", size: "30x30" %>
+                <%= f.input :username, :autofocus => true, :input_html => {:class =>'form-control'}, label: false %><br>
+                <%= image_tag "llave.png", size: "30x30" %>
+                <%= f.password_field :password, :class =>'form-control'  %><br>
+                <% if devise_mapping.rememberable? -%>
+                        <%= f.label :remember_me do %>
+                                <%= f.check_box :remember_me %> <%= User.human_attribute_name(:remember_me) %>
+                        <% end %>
+                <% end %>
+                <%= f.submit User.human_attribute_name("sign_in"), :class=>"btn btn-primary" %>
+                <% f.label User.human_attribute_name("languaje") %>
+        <% end %>
+</div>

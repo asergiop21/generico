@@ -1,0 +1,27 @@
+<div class="span12">
+<% if flash[:error] %>
+  <li class="alert alert-error"><%= flash[:error]  %></li>
+  <% end %>
+<h2><%= t"devise.sign_in" %></h2>
+
+ <div class ="span6">
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <%= f.label User.human_attribute_name(:username) %>
+  <%= f.text_field :username, :autofocus => true %>
+  <%= f.label User.human_attribute_name(:password) %>
+  <%= f.password_field :password %><br>
+  <% if devise_mapping.rememberable? -%>
+    <%= f.check_box :remember_me %> <%= f.label User.human_attribute_name(:remember_me) %>
+  <% end -%>
+  <%= f.submit User.human_attribute_name("sign_in"), :class=>"btn btn-primary" %>
+    <%= f.label User.human_attribute_name("languaje") %>
+        <ul>
+          <li><%= link_to_unless_current "English", locale: "en" %></li>
+          <li><%= link_to_unless_current "spanish", locale: "es" %></li>
+      </ul>
+	<% end %>
+</div>
+<div class="span4">
+		<h2>Registrarse</h2>
+</div>
+	</div>

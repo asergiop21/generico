@@ -1,0 +1,19 @@
+<%= simple_form_for @location, :defaults => {:input_html => {:class =>'span10'}} do |f| %>
+  <div class="container">
+    <div class="form-inputs">
+      <div class="row-fluid">
+        <%= f.error_notification %>
+         <div class="span6">
+              <%=f.input :name  %>
+              <%=f.input :departament  %>
+              <%=f.input :zipcode  %>
+              <%=f.select :province, Location::PROVINCE  %>
+              <%=f.country_select :country, ["Argentina"]  %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn btn-primary'  %>
+  </div>
+<% end %>

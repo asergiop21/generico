@@ -1,0 +1,46 @@
+
+
+.primero{
+background: #750000; /* Old browsers */
+background: -moz-linear-gradient(top, #750000 0%, #cc0000 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#750000), color-stop(100%,#cc0000)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #750000 0%,#cc0000 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #750000 0%,#cc0000 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #750000 0%,#cc0000 100%); /* IE10+ */
+background: linear-gradient(to bottom, #750000 0%,#cc0000 100%); /* W3C */
+
+/*
+  color: red;
+  background-image: -moz-linear-gradient(top, rgb(133,5,5) 42%, rgb(161,0,8) 100%);
+  background-image: -ms-linear-gradient(top, rgb(133,5,5) 42%, rgb(161,0,8) 100%);
+  background-image: -webkit-linear-gradient(top, rgb(133,5,5) 42%, rgb(161,0,8) 100%);
+  background-image: -o-linear-gradient(top, rgb(133,5,5) 42%, rgb(161,0,8) 100%);
+  background-image: linear-gradient(top, rgb(133,5,5) 42%, rgb(161,0,8) 100%);
+*/
+  height: 100px;
+
+}
+
+.segundo{
+  float: right;
+  padding-right: 100px;
+  padding-top: 50px;
+}
+
+.logo_1{
+  padding: 40px;
+  color: #fff;
+  font-size: 30px;
+  font-family: Sans-serif;
+}
+.logo_2{
+  color: #111;
+  font-size: 20px;
+
+}
+
+.logo_3{
+  color: #111;
+  font-size: 15px;
+}
+

@@ -1,0 +1,258 @@
+'es':
+
+  customers:
+    new:
+      title: 'Nuevo Cliente'
+    listing:
+      title: 'Consulta de Clientes'
+    editing:
+      title: 'Editar  Clientes'
+  locations:
+    new:
+      title:  'Nueva Localidad'
+    listing:
+      title: 'Consulta de Localidades'
+    editing:
+      title: 'Editar  Localidad'
+  plans:
+    new:
+      title: 'Nuevo Plan'
+    listing: 
+      title: 'Consulta de Planes'
+    editing:
+      title: 'Editar  Plan'
+    system_vampire: 'Sistema Vampiro'
+  suppliers:
+    new:
+      title: 'Nuevo Proveedor'
+    listing: 
+      title: 'Consulta de Proveedores'
+    editing:
+      title: 'Editar  Proveedor'
+  tickets:
+    new:
+      title: 'Nuevo Ticket'
+    listing:
+      title: 'Consulta de Tickets'
+    editing: 
+      title: 'Editar Ticket'
+  roles:
+    new:
+      title: 'Nuevo Rol'
+    listing:
+      title: 'Consulta de Roles'
+    editing:
+      title: 'Editar  Rol'
+  makes:
+    new:
+      title: 'Nueva Marca'
+    listing:
+      title: 'Consulta de Marcas'
+    editing:
+      title: 'Editar  Marca'
+  models:
+    new:
+      title: 'Nuevo Modelo'
+    listing:
+      title: 'Consulta de Modelos'
+    editing:
+      title: 'Editar  modelo'
+  equipment:
+    new:
+      title: 'Nuevo Equipo'
+    listing:
+      title: 'Consulta de Equipos'
+    editing:
+      title: 'Editar  Equipo'
+  categories:
+    new:
+      title: 'Nueva Categoria'
+    listing:
+      title: 'Consulta de Categorias'
+    editing:
+      title: 'Editar Categoria'
+  loans:
+    new:
+      title: 'Nuevo Comodato'
+    listing:
+      title_pending: 'Consulta de Comodatos Pendientes'
+      title: 'Consulta de Comodatos'
+    editing:
+      title: 'Editar Comodato'
+
+  users:
+    new:
+      title: 'Nuevo Usuario'
+    listing:
+      title: 'Consulta de Usuarios'
+    editing:
+      title: 'Editar Usuario'
+  devise:
+        sign_in: 'Iniciar Sesion'
+
+  articles:
+
+                
+  attributes:
+    created_at: 'Creado'
+    update_at: 'Actualizado'
+
+  activerecord:
+    errors:
+      messages:
+        blank: 'No puede quedar en blanco'
+        record_invalid: 'mensaje mal'
+      models:
+        customer:
+          attributes:
+            email:
+              invalid: 'No es un mail valido'
+            date_of_birth:
+              before: 'Debe ser mayor de 18 años'
+        phone:
+          attributes:
+            base:
+              phone_number: "en blanco"
+    models:
+      customer: 'Clientes'
+      location: 'Localidades'
+      invoice: 'Remito'
+      supplier: 'Proveedor'
+      make: 'Marca'
+      make: 'Categoria'
+      article: 'Articulo'
+    attributes:
+      customer:
+        name: 'Nombre'
+        lastname: 'Apellido'
+        address: 'Dirección'
+        neighborhood: 'Barrio'
+        reference_direction: 'Dirección de referencia'
+        email: 'email'
+        dni: 'dni'
+        plans_id: 'Planes'
+        description: 'Descripcion'
+        cuit: 'cuit '
+        date_of_birth: 'Fecha de nacimiento'
+        category: 'Categoria'
+        removed: 'Eliminado?'
+      user:
+        name: 'Nombre'
+        lastname: 'Apellido'
+        username: 'Nombre de Usuario'
+        password: 'Password'
+        remember_me: 'Recuerdame'
+        sign_in: 'Registrarse'
+        language: 'Idioma'
+        address: 'Dirección'
+      location:
+        name: 'Nombre'
+        departament: 'Departamento'
+        zipcode: 'Código Postal'
+        province: 'Provincia'
+        country: 'País'
+      plan:
+        name: 'Nombre'
+        price: 'Precio' 
+        upload_speed: 'Velocidad de Subida'
+        download_speed: 'Velocidad de Bajada'
+        remove: 'Plan Habilitado' #Plan Habilitado o Deshabilitado
+        price_surcharges1: 'Recargos 1' 
+        price_surcharges2: 'Recargos 2'
+        percentage_junk: 'Porcentaje Basura'
+        support_priority: 'Soporte Prioritario'
+        upload_speed_vampire: 'Velocidad de Subida'
+        download_speed_vampire: 'Velocidad de Bajada'
+        percentage_junk_vampire: 'Porcentaje Basura'
+        start_time: 'Tiempo Inicial'
+        end_time: 'Tiempo Final'
+      supplier:
+        location_id: 'Localidad'
+        name: 'Nombre'
+        address: 'Dirección'
+        locality: 'Localidad'
+        user: 'Usuario'
+        zipcode: 'Código Postal' 
+      ticket:
+        id: '#'
+        issue: 'Asunto'
+        date: 'Fecha'
+        message: 'Mensaje'
+        departament: 'Área'
+        priority: 'Prioridad'
+        Reply: 'Respuesta'
+        status: 'Estado'
+        user: 'Usuario'
+        subticket: 'Subticket'
+      role:
+        name: 'Nombre'
+        permission: 'Permisos'
+      make:
+        name: 'Nombre'
+        comment: 'Comentario'
+      model:
+        name: 'Nombre'
+        comment: 'Comentario'
+        make: 'Marca'
+        category: 'Categoria'
+      equipment:
+        mac: 'Mac'
+        status: 'Estado'
+        comment: 'Comentario'
+        model: 'Modelo'
+        supplier: 'Proveedor'
+      category: 
+        name: 'Nombre'
+        comment: 'Comentario'
+      loan:
+        equipment: 'Equipo'
+        status_loan: 'Estado de Comodato'
+        confirmation_loan: 'Confirmación de Comodato'
+        comment: 'Comentario'
+        technician: 'Técnico'
+        customer: 'Cliente'
+        user: 'Usuario'
+  view:
+    customers:
+      remove_phone: 'Eliminar'
+      add_phones: 'Agregar Telefonos'
+      phone_number: 'Telefonos'
+      prompt_location: 'Seleccione una localidad'
+      prompt_plans: 'Seleccione un plan'
+      new_customer: '+ Nuevo Cliente'
+      loans: 'Comodatos'
+    locations:
+      new_location: 'Nueva Localidad'
+      support_priority_hinit: 'La prioridad de soporte es de 1 a 5. Siendo el menor la Mayor Prioridad.'
+    plans: 
+      new_plan: 'Nuevo Plan'
+    suppliers:
+      new_supplier: 'Nuevo Proveedor' 
+      select_supplier: 'Seleccionar un proveedor'
+    role:
+      new_role: 'Nuevo Rol'
+      permission: 'Permisos'
+    make:
+      new_make: 'Nueva Marca'
+    model:
+      new_model: 'Nuevo Modelo'
+      select_model: 'Seleccionar un Modelo'
+    equipment:
+      new_equipment: 'Nuevo Equipo'
+    category:
+      new_category: 'Nueva Categoria'
+    loan:
+      new_loan: 'Nuevo Comodato'
+    user:
+      new_user: 'Nuevo Usuario'
+    invoice:
+      new_invoice: 'Crear Factura'
+
+
+  labels:
+    show: 'Ver'
+    edit: 'Editar'
+    new: 'Nuevo'
+    back: 'Volver'
+    destroy: 'Eliminar'
+    are_you_sure: '¿Está Seguro?' 

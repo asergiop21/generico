@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= Location.human_attribute_name('name') %></b>
+  <%= @location.name %>
+</p>
+
+<p>
+  <b><%= Location.human_attribute_name('departament') %></b>
+  <%= @location.departament %>
+</p>
+
+<p>
+  <b><%= Location.human_attribute_name('zipcode') %></b>
+  <%= @location.zipcode %>
+</p>
+
+<p>
+  <b><%= Location.human_attribute_name('province') %></b>
+  <%= @location.province %>
+</p>
+
+<p>
+  <b><%= Location.human_attribute_name('country') %></b>
+  <%= @location.country %>
+</p>
+
+
+<%= link_to t('labels.edit'), edit_location_path(@location) %> |
+<%= link_to t('labels.back'), locations_path %>
