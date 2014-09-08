@@ -3,7 +3,7 @@ role :web
 role :app
 role :db
 
-set :application, "montecaseros.com"
+set :application, "base_generico.com"
 set :repository,  "git@github.com:asergiop21/generico.git" #https://github.com/asergiop21/base.git"
 server "104.131.45.139", :web, :app, :db, primary: true
 set :deploy_to, '/home/marimar/base'

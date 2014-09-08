@@ -40,6 +40,7 @@ group :development do
    gem 'net-ssh', "~>2.9.0"
    gem "rspec-rails"
 end
- gem 'passenger'
+gem 'unicorn'
+gem 'passenger'
  gem 'i18n', "~>0.6.4"
-gem 'thin'
+#gem 'thin'
