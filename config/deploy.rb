@@ -1,3 +1,4 @@
+require 'rvm/capistrano'
 require 'bundler/capistrano'
 role :web
 role :app
@@ -6,7 +7,7 @@ role :db
 set :application, "base_generico.com"
 set :repository,  "git@github.com:asergiop21/generico.git" #https://github.com/asergiop21/base.git"
 server "104.131.45.139", :web, :app, :db, primary: true
-set :deploy_to, '/home/marimar/base'
+set :deploy_to, '/home/deployer/base'
 set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 set :user, 'deployer'
 set :deploy_via, :remote_cache
