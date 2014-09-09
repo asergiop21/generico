@@ -207,7 +207,7 @@ DEPENDENCIES
   ancestry
   barby
   cancan
-  capistrano (~> 2.15.5)
+  capistrano
   coffee-rails (~> 4.0.0)
   country_select
   devise

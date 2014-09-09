@@ -36,11 +36,11 @@ gem 'pry', group: [:development]
 
 # Deploy with Capistrano
 group :development do
-   gem 'capistrano', "~>2.15.5"
+   gem 'capistrano'
    gem 'net-ssh', "~>2.9.1"
    gem "rspec-rails"
 end
-gem 'unicorn'
+#gem 'unicorn'
 gem 'passenger'
  gem 'i18n', "~>0.6.4"
 #gem 'thin'
