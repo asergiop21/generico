@@ -36,7 +36,7 @@ gem 'pry', group: [:development]
 
 # Deploy with Capistrano
 group :development do
-   gem 'capistrano'
+   gem 'capistrano', '~>2.15.5'
    gem 'net-ssh', "~>2.9.1"
    gem "rspec-rails"
 end

@@ -14,6 +14,13 @@ set :user, 'deployer'
 set :deploy_via, :remote_cache
 set :use_sudo, false
 set :branch, 'master'
+set :passenger_port, 1084
+set :passenger_cmd,  "passenger"
+set :bundle_cmd, "bundle"
+set :rvm_type, :system
+set :rvm_ruby_string, '2.1.2@base'
+
+
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
@@ -23,10 +30,10 @@ namespace :deploy do
     task :restart, :roles => :app, :except => {:no_release => true } do
       run "#{try_sudo} touch #{File.join(current_path, 'tmp','restart.txt')}" 
 end
-    desc "reload the database with seed data"
-    task :seed do
-      run "cd #{current_path}; rake db:seed RAILS_ENV=#{rails_env}"
-      run "cd #{deploy_to}/current && bundle install vendor/gems"
+#    desc "reload the database with seed data"
+#    task :seed do
+#      run "cd #{current_path}; rake db:seed RAILS_ENV=#{rails_env}"
+#      run "cd #{deploy_to}/current && bundle install vendor/gems"
 end
 desc "Create Production Database"
 task :create do
