@@ -1,5 +1,6 @@
-require 'rvm/capistrano'
-require 'bundler/capistrano'
+require "rvm/capistrano"
+require "bundler/capistrano"
+
 role :web
 role :app
 role :db
@@ -14,7 +15,7 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 set :branch, 'master'
 default_run_options[:pty] = true
-#ssh_options[:forward_agent] = true
+ssh_options[:forward_agent] = true
 
 namespace :deploy do
     task :start do ; end
